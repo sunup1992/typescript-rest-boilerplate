@@ -35,6 +35,7 @@
     });
 
     $('#test-objects-hello').click( async e => {
+        console.log("동기")
         console.log("a")
         let result = await $.get('/hello-objects', function (data) {
             console.log("b")
@@ -44,9 +45,13 @@
     });
 
     $('#test-object-hello').click(function () {
+        console.log("비동기")
+        console.log("a")
         $.get('/hello-objects/testname', function (data) {
+            console.log("b")
             alert(JSON.stringify(data));
         });
+        console.log("c")
     });
 </script>
 </body>
